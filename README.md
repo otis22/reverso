@@ -2,9 +2,8 @@
 
 Skeleton for creating small php packages with static analyzing and unit testing
 
-![GitHub CI](https://github.com/otis22/php-skeleton/workflows/CI/badge.svg)
-![Travis CI](https://api.travis-ci.org/otis22/php-skeleton.svg?branch=master)
-[![Coverage Status](https://coveralls.io/repos/github/otis22/php-skeleton/badge.svg?branch=master)](https://coveralls.io/github/otis22/php-skeleton?branch=master)
+![GitHub CI](https://github.com/otis22/reverso/workflows/CI/badge.svg)
+[![Coverage Status](https://coveralls.io/repos/github/otis22/reverso/badge.svg?branch=master)](https://coveralls.io/github/otis22/reverso?branch=master)
 
 ## Local work
 
