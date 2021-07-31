@@ -21,9 +21,9 @@ $response = $client->post(
     [
         'headers' => $headers,
         'body' => json_encode([
-            "source_text" => "пример",
+            "source_text" => "а что это у вас за пример?",
             "target_text" => "",
-            "source_lang" => "ru",
+            "source_lang" => "rffu",
             "target_lang" => "en"
         ])
     ]

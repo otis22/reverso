@@ -9,7 +9,8 @@
         }
     ],
     "require": {
-        "guzzlehttp/guzzle": "^7.3"
+        "guzzlehttp/guzzle": "^7.3",
+        "elegant-bro/interfaces": "^1.2"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.1",
@@ -19,17 +20,17 @@
     },
     "autoload": {
         "psr-4": {
-            "Otis22\\PhpSkeleton\\": "src"
+            "Otis22\\Reverso\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Otis22\\PhpSkeleton\\": "tests"
+            "Otis22\\Reverso\\": "tests"
         }
     },
     "scripts": {
         "unit": "vendor/bin/phpunit",
-        "coverage": "vendor/bin/php-coverage-checker build/logs/clover.xml 100",
+        "coverage": "vendor/bin/php-coverage-checker build/logs/clover.xml 90",
         "static-analyze": "vendor/bin/phpstan analyse --level=max src tests",
         "style": "vendor/bin/ecs check",
         "style-fix": "vendor/bin/ecs check --fix",
