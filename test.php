@@ -21,12 +21,12 @@ $response = $client->post(
     [
         'headers' => $headers,
         'body' => json_encode([
-            "source_text" => "а что это у вас за пример?",
+            "source_text" => "пример",
             "target_text" => "",
-            "source_lang" => "rffu",
+            "source_lang" => "ru",
             "target_lang" => "en"
         ])
     ]
 );
 
-var_dump( (string) $response->getBody());
+file_put_contents('log.txt', (string) $response->getBody());

@@ -9,6 +9,9 @@ use ElegantBro\Interfaces\Stringify;
 final class Language implements Stringify
 {
     private string $language;
+    /**
+     * @var array<string>
+     */
     private array $validLanguagesList = [
         'en',
         'fr',
@@ -34,7 +37,10 @@ final class Language implements Stringify
     {
         if (!in_array($this->language, $this->validLanguagesList)) {
             throw new \InvalidArgumentException(
-                "Language {$this->language} is not exists in the list of valid languages " . join(',', $this->validLanguagesList)
+                "Language {$this->language} is not exists in the list of valid languages " . join(
+                    ',',
+                    $this->validLanguagesList
+                )
             );
         }
         return $this->language;

@@ -12,7 +12,7 @@ ifndef PORT
 endif
 
 base_dir:=$(shell basename $(CURDIR))
-docker:=docker run --rm -v $(CURDIR):/app -w /app $(base_dir):$(php_version)
+docker:=docker run --rm -u=$(shell id -u):$(shell id -g) -v $(CURDIR):/app -w /app $(base_dir):$(php_version)
 
 build:
 	docker build --build-arg VERSION=$(php_version) --tag $(base_dir):$(php_version) ./docker/

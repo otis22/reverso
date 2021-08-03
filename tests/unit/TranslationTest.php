@@ -6,13 +6,13 @@ namespace Otis22\Reverso;
 
 use PHPUnit\Framework\TestCase;
 
-class TranslateTest extends TestCase
+class TranslationTest extends TestCase
 {
     public function testAsArrayWithValidParametersRightSourceTextParameter(): void
     {
         $this->assertEquals(
             (
-                new Translate(
+                new Translation(
                     new Language("en"),
                     new Language('ru'),
                     new Word("test")

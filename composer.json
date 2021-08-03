@@ -10,7 +10,8 @@
     ],
     "require": {
         "guzzlehttp/guzzle": "^7.3",
-        "elegant-bro/interfaces": "^1.2"
+        "elegant-bro/interfaces": "^1.2",
+        "ext-json": "*"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.1",

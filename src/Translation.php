@@ -6,7 +6,7 @@ namespace Otis22\Reverso;
 
 use ElegantBro\Interfaces\Arrayee;
 
-final class Translate implements Arrayee
+final class Translation implements Arrayee
 {
     private Language $languageFrom;
     private Language $languageTo;
@@ -24,6 +24,10 @@ final class Translate implements Arrayee
         $this->word = $word;
     }
 
+    /**
+     * @return array<string,string>
+     * @throws \Exception
+     */
     public function asArray(): array
     {
         return [
