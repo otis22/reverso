@@ -1,6 +1,6 @@
 {
     "name": "otis22/reverso",
-    "description": "Php skeleton for small packages with most important qaulity ",
+    "description": "Library for working with reverso context api",
     "license": "MIT",
     "authors": [
         {
@@ -35,7 +35,6 @@
         "static-analyze": "vendor/bin/phpstan analyse --level=max src tests",
         "style": "vendor/bin/ecs check",
         "style-fix": "vendor/bin/ecs check --fix",
-        "security": "./local-php-security-checker --path=./composer.lock",
-        "check-all": "composer validate && composer security && composer style && composer static-analyze && composer unit"
+        "check-all": "composer validate && composer style && composer static-analyze && composer unit"
     }
 }

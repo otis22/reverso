@@ -1,11 +1,42 @@
-# php skeleton
+# otis22/reverso
 
-Skeleton for creating small php packages with static analyzing and unit testing
+Library for working with [context.reverso.net](https://context.reverso.net/) api
 
 ![GitHub CI](https://github.com/otis22/reverso/workflows/CI/badge.svg)
 [![Coverage Status](https://coveralls.io/repos/github/otis22/reverso/badge.svg?branch=master)](https://coveralls.io/github/otis22/reverso?branch=master)
 
-## Local work
+## How to use 
+
+```
+composer require otis22/reverso
+```
+**Be careful library can translate only one single word**
+
+**Available language list:** en, fr, es, de, it, pt, ru, ro, cz, zh
+
+
+```php
+use Otis22\Reverso\Context;
+
+$context = Context::fromLanguagesAndWord("ru", "en", "пример");
+
+$context->firstInDictionary(); # return "example" word, because is the most popular variant in the reverso.net
+
+$context->dictionary(); #return synonyms array ['example', 'sample', 'case', ...]
+
+$context->examples(); #return examples sentences
+/** 
+    [
+        [
+            'source' => 'Красивый <em>пример</em> - прошлогодняя эпидемия свиного гриппа.',
+            'target' => 'So a nice <em>example</em> of this came from last year and swine flu.'
+        ],
+        ...
+    ]
+*/
+```
+
+## Contributing
 
 For run all tests
 ```shell
@@ -33,8 +64,6 @@ make all PHP_VERSION=7.4 && make all PHP_VERSION=8.0
 
 all commands
 ```shell
-# security check
-make security
 # composer install
 make install
 # composer install with --no-dev
@@ -51,15 +80,3 @@ make unit
 make coverage
 ```
 
-## Adopt for you 
-
-- Click on [Use template button](https://prnt.sc/w7avaw) 
-- Put your code to src/ tests/ directory
-- Delete config files for unused CI systems
-- Change project data in composer.json, README and Makefile
-
-
-## Comments 
-
-- Repo with analyze tools: https://github.com/exakat/php-static-analysis-tools
-- Repo for gitlab-ci php https://gitlab.com/gitlab-org/gitlab-foss/-/blob/master/lib/gitlab/ci/templates/PHP.gitlab-ci.yml

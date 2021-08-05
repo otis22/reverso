@@ -4,6 +4,13 @@ declare(strict_types=1);
 
 namespace Otis22\Reverso;
 
+use GuzzleHttp\Client;
+use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Exception\GuzzleException;
+use InvalidArgumentException;
+
+use function json_decode;
+
 final class Context
 {
     /**
@@ -17,6 +24,56 @@ final class Context
     public function __construct(array $response)
     {
         $this->response = $response;
+    }
+
+    /**
+     * @param ClientInterface $client
+     * @param Translation $translation
+     * @return static
+     * @throws GuzzleException
+     * @throws InvalidArgumentException for problem with translation data
+     */
+    public static function fromTranslation(ClientInterface $client, Translation $translation): self
+    {
+        return new self(
+            json_decode(
+                $client->request(
+                    "POST",
+                    "/bst-query-service",
+                    [
+                        'headers' =>  [
+                            "User-Agent" => "Mozilla/5.0",
+                            "Content-Type" => "application/json; charset=UTF-8"
+                        ],
+                        'body' => json_encode(
+                            $translation->asArray()
+                        ),
+                    ]
+                )->getBody()->getContents(),
+                true,
+                JSON_THROW_ON_ERROR
+            )
+        );
+    }
+
+    /**
+     * @param string $languageFrom
+     * @param string $languageTo
+     * @param string $word
+     * @return static
+     * @throws GuzzleException
+     * @throws InvalidArgumentException for problem with translation data
+     */
+    public static function fromLanguagesAndWord(string $languageFrom, string $languageTo, string $word): self
+    {
+        return self::fromTranslation(
+            new Client(['base_uri' => 'https://context.reverso.net/translation']),
+            new Translation(
+                new Language($languageFrom),
+                new Language($languageTo),
+                new Word($word)
+            )
+        );
     }
 
     public function firstInDictionary(): string
