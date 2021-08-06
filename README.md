@@ -10,7 +10,7 @@ Library for working with [context.reverso.net](https://context.reverso.net/) api
 ```
 composer require otis22/reverso
 ```
-**Be careful library can translate only one single word**
+**Be careful library can translate only one a single word**
 
 **Available language list:** en, fr, es, de, it, pt, ru, ro, cz, zh
 
