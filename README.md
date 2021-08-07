@@ -10,7 +10,7 @@ Library for working with [context.reverso.net](https://context.reverso.net/) api
 ```
 composer require otis22/reverso
 ```
-**Be careful library can translate only one single word**
+**Be careful library can translate only one a single word**
 
 **Available language list:** en, fr, es, de, it, pt, ru, ro, cz, zh
 
@@ -20,7 +20,7 @@ use Otis22\Reverso\Context;
 
 $context = Context::fromLanguagesAndWord("ru", "en", "пример");
 
-$context->firstInDictionary(); # return "example" word, because is the most popular variant in the reverso.net
+$context->firstInDictionary(); # return "example" word, because it is the most popular variant in the reverso.net
 
 $context->dictionary(); #return synonyms array ['example', 'sample', 'case', ...]
 
