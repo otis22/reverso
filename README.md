@@ -1,5 +1,7 @@
 # otis22/reverso
 
+<img src="https://www.elegantobjects.org/badge.svg" alt="EO badge">
+
 Library for working with [context.reverso.net](https://context.reverso.net/) api
 
 ![GitHub CI](https://github.com/otis22/reverso/workflows/CI/badge.svg)
@@ -35,6 +37,8 @@ $context->examples(); #return examples sentences
     ]
 */
 ```
+
+[Why it looks so?](https://otis22.github.io/unit/testing/2021/08/07/for-interns.html)
 
 ## Contributing
 
