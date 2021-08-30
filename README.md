@@ -22,6 +22,8 @@ use Otis22\Reverso\Context;
 
 $context = Context::fromLanguagesAndWord("ru", "en", "пример");
 
+$context->original(); # return "пример"
+
 $context->firstInDictionary(); # return "example" word, because it is the most popular variant in the reverso.net
 
 $context->dictionary(); #return synonyms array ['example', 'sample', 'case', ...]
