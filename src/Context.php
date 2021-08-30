@@ -76,6 +76,11 @@ final class Context
         );
     }
 
+    public function original(): string
+    {
+        return $this->response['request']['source_text'];
+    }
+
     public function firstInDictionary(): string
     {
         return $this->response['dictionary_entry_list'][0]['term'];
