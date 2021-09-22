@@ -24,15 +24,13 @@ class TranslationTest extends TestCase
 
     public function testWordWithPhraseInsteadAWord(): void
     {
-        $sut = new Word('this is a test phrase');
         $this->expectException(\InvalidArgumentException::class);
-        $sut->asString();
+        $sut = new Word('this is a test phrase');
     }
 
     public function testLanguageWithInvalidValue(): void
     {
-        $sut = new Language('klingon');
         $this->expectException(\InvalidArgumentException::class);
-        $sut->asString();
+        $sut = new Language('klingon');
     }
 }

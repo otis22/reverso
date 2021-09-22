@@ -30,19 +30,19 @@ final class Language implements Stringify
      */
     public function __construct(string $language)
     {
-        $this->language = $language;
-    }
-
-    public function asString(): string
-    {
-        if (!in_array($this->language, $this->validLanguagesList)) {
+        if (!in_array($language, $this->validLanguagesList)) {
             throw new \InvalidArgumentException(
-                "Language {$this->language} is not exists in the list of valid languages " . join(
+                "Language {$language} is not exists in the list of valid languages " . implode(
                     ',',
                     $this->validLanguagesList
                 )
             );
         }
+        $this->language = $language;
+    }
+
+    public function asString(): string
+    {
         return $this->language;
     }
 }

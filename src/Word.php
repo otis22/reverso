@@ -15,16 +15,15 @@ final class Word implements Stringify
      */
     public function __construct(string $word)
     {
+        if (strpos(trim($word), ' ') !== false) {
+            throw new \InvalidArgumentException("$word must be only one word");
+        }
         $this->word = $word;
     }
 
     public function asString(): string
     {
-        $word = trim($this->word);
-        if (strpos(trim($word), ' ') !== false) {
-            throw new \InvalidArgumentException("$word must be only one word");
-        }
-        return $word;
+        return trim($this->word);
     }
 
 }
