@@ -13,15 +13,17 @@ final class Language implements Stringify
      * @var array<string>
      */
     private array $validLanguagesList = [
-        'en',
-        'fr',
-        'es',
+        'ar',
         'de',
+        'en',
+        'es',
+        'fr',
+        'he',
         'it',
+        'ja',
         'pt',
-        'ru',
         'ro',
-        'cz',
+        'ru',
         'zh'
     ];
 
